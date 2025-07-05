@@ -1,20 +1,13 @@
-const card = document.getElementById('cartao');
+const botao = document.getElementById('botao');
 
-const nome = document.getElementById('nome');
+const painel = document.getElementById('painel');
 
-const bio = document.getElementById('bio');
+botao.addEventListener('click', () => {
+    document.body.classList.toggle('escuro');
 
-const p = document.createElement('p');
+    const escuroAtivo = document.body.classList.contains('escuro');
 
-card.style.background = 'black';
+    botao.textContent = escuroAtivo ? 'Alterne para o modo claro' : 'Alterne para o modo escuro';
 
-card.style.color = 'white';
-
-bio.style.fontStyle = 'italic';
-
-p.innerText = 'Novo texto';
-
-p.style.fontstyle = 'italic';
-
-card.appendChild(p);
-
+    painel.textContent = escuroAtivo ? 'Tema escuro ativado' : 'Tema claro ativado';
+})
